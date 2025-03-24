@@ -10,6 +10,7 @@ import ToughtController from "./controllers/ToughtController.js";
 import AuthRoutes from "./routes/AuthRoutes.js";
 import { fileURLToPath } from "url";
 import chalk from "chalk";
+import "dotenv/config";
 
 const FileStore = sessionFileStore(session);
 
@@ -31,7 +32,7 @@ app.set("view engine", "handlebars");
 app.use(
   session({
     name: "session",
-    secret: "45KSAODmxvd0234i9a@mkm34%%u4bw",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: new FileStore({
