@@ -9,6 +9,16 @@
 /* NAVBAR */
 #logo img {
   height: 40px;
+  animation: floatLogo 3s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 #navbar {
